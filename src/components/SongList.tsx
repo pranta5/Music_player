@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { CiEdit } from "react-icons/ci";
 import { IoSave } from "react-icons/io5";
 
+import image1 from "../../public/namroud.jpg";
+
 interface AudioFile {
   id: string;
   name: string;
@@ -48,6 +50,11 @@ export default function SongList({
                 currentSong?.id === file.id ? "text-green-500" : ""
               }`}
             >
+              <img
+                src={image1.src}
+                alt={file.name}
+                className=" h-15 rounded-lg"
+              />
               {editingId === file.id ? (
                 <input
                   type="text"
@@ -86,6 +93,11 @@ export default function SongList({
               }`}
               onClick={() => playAudio(file)}
             >
+              <img
+                src={image1.src}
+                alt={file.name}
+                className="w-full h-32 object-cover mb-2 rounded-lg "
+              />
               {editingId === file.id ? (
                 <input
                   type="text"
@@ -97,7 +109,7 @@ export default function SongList({
                 <p>{file.name}</p>
               )}
 
-              <div className="mt-4 flex flex-col items-end">
+              <div className="mb-2 flex flex-col items-center">
                 {editingId === file.id ? (
                   <Button variant="outline" onClick={() => renameFile(file.id)}>
                     <IoSave />
