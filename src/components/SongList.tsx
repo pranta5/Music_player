@@ -44,7 +44,7 @@ export default function SongList({
             <li
               key={file.id}
               onClick={() => playAudio(file)}
-              className={`flex justify-between items-center p-2 cursor-pointer ${
+              className={`flex justify-between items-center border-1 rounded-lg my-2 shadow-lg hover:shadow-xl  p-2 cursor-pointer ${
                 currentSong?.id === file.id ? "text-green-500" : ""
               }`}
             >
@@ -77,11 +77,11 @@ export default function SongList({
           ))}
         </ul>
       ) : (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-4 my-2 ">
           {files.map((file) => (
             <Card
               key={file.id}
-              className={`p-4 cursor-pointer ${
+              className={`p-4 cursor-pointer shadow-lg hover:shadow-gray-400 ${
                 currentSong?.id === file.id ? "text-green-500" : ""
               }`}
               onClick={() => playAudio(file)}
