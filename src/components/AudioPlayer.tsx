@@ -54,6 +54,11 @@ export default function AudioPlayer({
       setProgress(newTime);
     }
   };
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
 
   return (
     <div className="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex items-center justify-between">
@@ -87,8 +92,4 @@ export default function AudioPlayer({
   );
 }
 
-const formatTime = (time: number) => {
-  const minutes = Math.floor(time / 60);
-  const seconds = Math.floor(time % 60);
-  return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-};
+

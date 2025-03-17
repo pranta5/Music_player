@@ -19,7 +19,7 @@ export default function FileUploader({ setFiles, files }: FileUploaderProps) {
   });
 
   return (
-    <div {...getRootProps()} className="border-dashed border-2 p-6 text-center cursor-pointer">
+    <div {...getRootProps()} className="border-dashed border-2 p-6 text-center cursor-pointer rounded-lg hover:bg-gray-100">
       <input {...getInputProps()} />
       <p>Drag & drop audio files here, or click to select files</p>
     </div>
