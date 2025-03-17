@@ -6,6 +6,10 @@ import FileUploader from "@/components/FileUploader";
 import SongList from "@/components/SongList";
 import AudioPlayer from "@/components/AudioPlayer";
 import { Button } from "@/components/ui/button";
+import { CiGrid41 } from "react-icons/ci";
+import { CiBoxList } from "react-icons/ci";
+
+
 
 interface AudioFile {
   id: string;
@@ -66,7 +70,7 @@ export default function MusicPlayer() {
   return (
     <div className="p-6">
       <FileUploader setFiles={setFiles} files={files} />
-      <Button className="my-3" variant="outline" onClick={() => setView(view === "list" ? "grid" : "list")}>Toggle View</Button>
+      <Button className="my-3" variant="outline" onClick={() => setView(view === "list" ? "grid" : "list")}>{view==="list"?(<CiBoxList/>):(<CiGrid41/>)}</Button>
       <SongList files={files} setFiles={setFiles} playAudio={playAudio} currentSong={currentSong} view={view} />
       {currentSong && (
         <AudioPlayer
