@@ -18,6 +18,6 @@ Follow these steps to set up and run the project:
 3. **Run the Project**  
 ```npm run dev```
 
-4. **Vercel**
+##Live on Vercel
 
 Link - https://music-player-gray-rho.vercel.app/
